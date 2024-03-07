@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav">
+        <div>
+            <h2>Floral World</h2>
+        </div>
+        <div class="nav-items">
+            <a class="link" href="index.html" onclick="scrollToSection('second')">Home</a>
+            <a class="link" href="#forth" onclick="scrollToSection('forth')">Shop</a>
+            <a class="link" href="contact.html" onclick="scrollToSection('contact')">Contact</a>
+            <a class="link" href="gallery.html" onclick="scrollToSection('gallery')">Gallery</a>
+            <a class="link" href="list.html" onclick="scrollToSection('list')">List of Products</a>
+            
+        </div>
+    </div>
+    <div class="phone">
+        <div>
+            <img src="https://images.pexels.com/photos/617965/pexels-photo-617965.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="hand">
+        </div>
+        <div class="data">
+            <div class="input">
+                <form  onsubmit="sendEmail(); reset(); return false;">
+                <h3>Please fill your Data</h3>
+                <input type="text" placeholder=" Enter Your Name" required> <br> <br>
+                <input type="text" placeholder="Enter Contact Number" required> <br> <br>
+                <input type="email" id="email" placeholder="Enter Your Gmail" required><br> <br>
+
+                <input type="text" rows="4" placeholder="Enter your message" required> <br> <br> <br>
+                <button class="button2"  type="submit">Send</button>
+            </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="ankita">
+            <h2>Contact- ankitarawat094@gmail.com</h2>
+            <h2>@GLA University</h2>
+        </div>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script >
+        function sendEmail() {
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "ankitarawat094@gmail.com",
+        Password: "password",
+        To: 'burpsuit28@gmail.com',
+        From: document.getElementById("email").value,
+        Subject: "New Enquiry",
+        Body: "This is the body of the email"
+    }).then(
+        message => alert(message)
+    )
+}
+
+    </script>
+</body>
+</html>
